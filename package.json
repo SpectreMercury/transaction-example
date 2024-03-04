@@ -9,19 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/server": "^4.9.5",
+    "@ckb-lumos/base": "0.21.1",
+    "@ckb-lumos/bi": "0.21.1",
+    "@ckb-lumos/codec": "0.21.1",
+    "@ckb-lumos/config-manager": "0.21.1",
+    "@ckb-lumos/lumos": "0.21.1",
+    "@ckb-lumos/rpc": "0.21.1",
+    "bignumber.js": "^9.1.2",
+    "fs": "^0.0.1-security",
+    "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "notistack": "^3.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "typescript": "^5"
   }
 }
