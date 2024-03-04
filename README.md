@@ -164,4 +164,4 @@ Send the transaction
 const hash = await rpc.sendTransaction(tx, "passthrough");
 ```
 
-You can go to the `complete transaction` to confirm the process.(https://explorer.nervos.org/transaction/0xada1ae693138bec933a17d249e9fa605f6fe5cdf8ae1f4126171f4eeed960c4a)确认过程
+You can go to the `complete transaction` to confirm the process.[Full Transaction](https://explorer.nervos.org/transaction/0xada1ae693138bec933a17d249e9fa605f6fe5cdf8ae1f4126171f4eeed960c4a)
