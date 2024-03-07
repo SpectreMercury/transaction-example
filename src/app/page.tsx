@@ -2,9 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { sharedPrivateKey } from './sharedPrivateKey';
-import { buildTransfer, capacityOf, formatString, generateAddressFromPrivateKey, sendTransaction, signByPrivateKey, transfer } from "./lib";
+import { capacityOf, formatString, generateAddressFromPrivateKey, sendTransaction, signByPrivateKey, transfer } from "./lib";
 import { BI, HexString, helpers } from '@ckb-lumos/lumos';
-import { enqueueSnackbar } from "notistack";
 import Image from "next/image";
 import BigNumber from 'bignumber.js';
 
@@ -30,7 +29,6 @@ export default function Home() {
   };
 
   const getCapacity = async (address: string, k: string) => {
-    console.log(address);
     let balance = await capacityOf(address);
     let capacity = Math.floor(new BigNumber(balance.toString()).toNumber() / 10 ** 8)
     if (k === 'alice') {
@@ -39,23 +37,6 @@ export default function Home() {
       setCharlieBalance(capacity);
     }
     return balance
-  }
-
-  const TransferCKB = async (privateKey: string, from: string, to: string,  amount: string) => {
-    let txSkeleton = await buildTransfer({
-      from,
-      to,
-      amount
-    })
-
-    console.log('txSkeleton', txSkeleton)
-
-    let signTxHash = await signByPrivateKey(txSkeleton, privateKey);
-
-    console.log('signTxHash', signTxHash)
-    
-    let txHash = await sendTransaction(signTxHash);
-    console.log(txHash);
   }
 
   useEffect(() => {
@@ -97,7 +78,6 @@ export default function Home() {
         <div 
           onClick={( )=> {
             if (!aliceAmount || !aliceBalance) return
-            console.log(aliceAmount);
             transfer({
               from: aliceAddress,
               to: charlieAddress,
@@ -140,7 +120,6 @@ export default function Home() {
         <div className="mt-4 w-80 h-16 flex justify-center items-center text-sm bg-black rounded-md cursor-pointer"
           onClick={( )=> {
             if (!charlieAmount || !charlieBalance) return
-            console.log(aliceAmount);
             transfer({
               from: charlieAddress,
               to: aliceAddress,

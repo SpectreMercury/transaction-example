@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "generate": "graphql-codegen",
+    "lint": "next lint",
+    "watch": "graphql-codegen watch"
   },
   "dependencies": {
     "@apollo/server": "^4.9.5",
@@ -16,11 +18,29 @@
     "@ckb-lumos/config-manager": "0.21.1",
     "@ckb-lumos/lumos": "0.21.1",
     "@ckb-lumos/rpc": "0.21.1",
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@joyid/ckb": "^0.0.4",
+    "@mantine/core": "^7.6.1",
+    "@mantine/dropzone": "^7.6.1",
+    "@mantine/hooks": "^7.6.1",
+    "@spore-sdk/core": "^0.2.0-beta.2",
+    "@tanstack/react-query": "^4.35.3",
+    "@trpc/client": "^10.45.1",
+    "@trpc/react-query": "^10.45.1",
+    "@trpc/server": "^10.45.1",
     "bignumber.js": "^9.1.2",
     "fs": "^0.0.1-security",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "graphql-tag": "^2.12.6",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
+    "spore-graphql": "^0.1.4",
+    "ts-node": "^10.9.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",

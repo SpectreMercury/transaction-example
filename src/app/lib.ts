@@ -7,8 +7,6 @@ import { Address, BI, Cell, Hash, HexString, Indexer, RPC, Script, Transaction, 
 export const CONFIG = config.predefined.AGGRON4;
 config.initializeConfig(CONFIG);
 
-console.log(CONFIG);
-
 const CKB_RPC_URL = "https://testnet.ckb.dev/rpc";
 const rpc = new RPC(CKB_RPC_URL);
 const indexer = new Indexer(CKB_RPC_URL);
@@ -210,11 +208,8 @@ export async function transfer(options: Options): Promise<string> {
   const Sig = hd.key.signRecoverable(message!, options.privKey);
   const tx = helpers.sealTransaction(txSkeleton, [Sig]);
   
-  console.log(tx);
-
   const hash = await rpc.sendTransaction(tx, "passthrough");
-
-
+  
   console.log("The transaction hash is", hash);
 
   return hash;
